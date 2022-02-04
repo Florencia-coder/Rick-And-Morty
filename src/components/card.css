@@ -1,0 +1,12 @@
+.imagen{
+    border-radius: 50%;
+}
+
+.card{
+    width: 312px;
+    height: 380px;
+    margin-left: 90px;
+    background-color: transparent;
+    border: transparent;
+
+}
