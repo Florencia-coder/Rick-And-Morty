@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  padding: 0px 20px;
+  background-color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.header-title {
+  font-size: 3rem;
+  color: Fuchsia;
+}
+
+.button {
+  transition: color 0.3s;
+  font-size: 3rem;
+}
+
+.button-enabled {
+  color: fuchsia;
+}
+
+.button-enabled:hover {
+  color: #00bfff;
+  cursor: pointer;
+}
+
+.button-disabled {
+  color: #666666;
+}
+
+.button-disabled:hover {
+  cursor: not-allowed;
+}

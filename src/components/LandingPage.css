@@ -1,56 +1,135 @@
-.landing{
-    background-image: url(https://p4.wallpaperbetter.com/wallpaper/200/433/178/rick-and-morty-cartoons-tv-shows-hd-wallpaper-preview.jpg);
-    padding: 400px 100px;
-	text-align: center;
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	position: relative;
+.landing {
+  height: 100%;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+  overflow: hidden;
+  background: url("/public/space.jpg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.button {
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #3d6436ea;
-    border: none;
-    color: #000000;
-    text-align: center;
-    font-size: 28px;
-    padding: 10px;
-    width: 70;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-    font-family: ui-monospace;
-  }
-  
-  .button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button span:after {
-    content: '»';
-    position: absolute;
+.landing-portal {
+  width: 600px;
+  height: 600px;
+  animation: portalAppearSpinAndPulse 4s ease-out forwards,
+    spinAndPulse 3s linear infinite 4s;
+}
+
+.landing-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(0);
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: #39ff14;
+  color: #333333;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  animation: buttonAppear 2s ease-out forwards 2s;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.landing-button:hover {
+  background-color: #00bfff;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
   }
-  
-  .button:hover span {
-    padding-right: 25px;
-    color:#000000
-    
-  }
-  
-  .button:hover span:after {
+  to {
     opacity: 1;
-    right: 0;
-    
   }
-  .button:hover{
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.63),0 17px 50px 0 rgba(0,0,0,0.63);
+}
+
+@keyframes portalAppearSpinAndPulse {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
   }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+@keyframes spinAndPulse {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes expand {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
+@keyframes buttonAppear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.expand {
+  animation: expand 1s forwards;
+}
+
+@keyframes slowRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.landing-image {
+  position: absolute;
+  width: 100px;
+  animation: slowRotate 20s linear infinite;
+}
+
+.one {
+  top: 10px;
+  left: 0;
+}
+
+.two {
+  top: 20%;
+  right: 10%;
+}
+
+.three {
+  left: 20%;
+}
+
+.four {
+  right: 15%;
+  top: 60%;
+}
+
+.five {
+  top: 0;
+  left: 20%;
+}
